@@ -1,0 +1,10 @@
+^AusSportGrounds\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd$
+^\.github$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^CODE_OF_CONDUCT\.md$
+^codecov\.yml$
+^setup_script\.R$
