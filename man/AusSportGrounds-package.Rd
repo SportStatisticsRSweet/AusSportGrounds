@@ -19,5 +19,10 @@ Useful links:
 \author{
 \strong{Maintainer}: James Day \email{jamesthomasday@gmail.com} (\href{https://orcid.org/0000-0003-3133-943X}{ORCID})
 
+Authors:
+\itemize{
+  \item Alice Sweeting
+}
+
 }
 \keyword{internal}

@@ -2,7 +2,9 @@ Package: AusSportGrounds
 Version: 0.0.0.9000
 Title: What the Package Does (One Line, Title Case)
 Description: What the package does (one paragraph).
-Authors@R: person("James", "Day", email = "jamesthomasday@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-3133-943X"))
+Authors@R: c(
+        person("James", "Day", email = "jamesthomasday@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-3133-943X")),
+        person("Alice", "Sweeting", email = "", role = c("aut")))
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
