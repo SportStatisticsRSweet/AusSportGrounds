@@ -29,18 +29,15 @@ theme_ground <- function(aspect_ratio = 1) {
   theme_basic <- ggplot2::theme(
     panel.grid.major = ggplot2::element_blank(),
     panel.grid.minor = ggplot2::element_blank(),
-    axis.title       = ggplot2::element_blank(),
-    axis.ticks       = ggplot2::element_blank(),
-    axis.text        = ggplot2::element_blank(),
-    axis.line        = ggplot2::element_blank(),
+    axis.title = ggplot2::element_blank(),
+    axis.ticks = ggplot2::element_blank(),
+    axis.text = ggplot2::element_blank(),
+    axis.line = ggplot2::element_blank(),
     panel.background = ggplot2::element_blank(),
-    panel.border     = ggplot2::element_blank()
+    panel.border = ggplot2::element_blank(),
+    aspect.ratio = aspect_ratio
   )
 
-  if (!is.null(aspect_ratio)) {
-    return(list(theme_basic,
-                ggplot2::theme(aspect.ratio = aspect_ratio)))
-  }
 
-  list(theme_basic)
+  return(theme_basic)
 }
