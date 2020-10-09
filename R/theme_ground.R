@@ -21,12 +21,12 @@
 #' p + theme_ground(1)
 #'
 #' # Free aspect
-#' p + theme_pitch(aspect_ratio = NULL)
+#' p + theme_ground(aspect_ratio = NULL)
 #'
 #' @export
 theme_ground <- function(aspect_ratio = 1) {
 
-  theme_basic <- ggplot2::theme(
+  ggplot2::theme(
     panel.grid.major = ggplot2::element_blank(),
     panel.grid.minor = ggplot2::element_blank(),
     axis.title = ggplot2::element_blank(),
@@ -35,9 +35,6 @@ theme_ground <- function(aspect_ratio = 1) {
     axis.line = ggplot2::element_blank(),
     panel.background = ggplot2::element_blank(),
     panel.border = ggplot2::element_blank(),
-    aspect.ratio = aspect_ratio
-  )
+    aspect.ratio = aspect_ratio)
 
-
-  return(theme_basic)
 }
