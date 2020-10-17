@@ -15,6 +15,7 @@ Suggests:
     covr
 Imports: 
     magrittr,
-    ggplot2
+    ggplot2,
+    ggforce
 URL: https://github.com/SportStatisticsRSweet/AusSportGrounds
 BugReports: https://github.com/SportStatisticsRSweet/AusSportGrounds/issues
