@@ -4,7 +4,14 @@
 \alias{annotate_afl_oval}
 \title{Annotate AFL Oval}
 \usage{
-annotate_afl_oval(dim, colour = "dimgray", fill = NA, size = 1, ...)
+annotate_afl_oval(
+  dim,
+  origin = list(x = 0, y = 0),
+  colour = "dimgray",
+  fill = NA,
+  size = 1,
+  ...
+)
 }
 \arguments{
 \item{...}{}

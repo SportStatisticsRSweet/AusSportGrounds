@@ -6,9 +6,9 @@
 \alias{ground_gabba}
 \title{Ground dimensions}
 \format{
-An object of class \code{list} of length 4.
+An object of class \code{list} of length 2.
 
-An object of class \code{list} of length 4.
+An object of class \code{list} of length 2.
 }
 \usage{
 ground_mcg
@@ -21,14 +21,12 @@ The dimensions of the ground to build with the \code{annotate_} set of functions
 We provide some common ground dimensions but custom dimensions can be used.
 }
 \details{
-A "ground dimensions" is simply a list of dimensions that define a
-coordinate system. The required dimensions are:
+A "ground dimensions" is simply a list of dimensions that define relevent ground dimensions.
 
+The required dimensions for AFL grounds are:
 \itemize{
 \item{"length"}{The length of the longest part of the ground (x axis)}
 \item{"width"}{The width of the ground from side to the other (y axis)}
-\item{"origin_x"}{The minimum x coordinate of the ground}
-\item{"origin_y"}{The minimum y coordinate of the ground}
 }
 
 The following ground dimensions are provided
