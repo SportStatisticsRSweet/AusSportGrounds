@@ -1,0 +1,19 @@
+---
+title: "annotating_AFL_grounds"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{annotating_AFL_grounds}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(AusSportGrounds)
+```
