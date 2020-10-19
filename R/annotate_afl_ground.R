@@ -44,7 +44,7 @@ annotate_afl_oval <- function(dim, origin = list(x = 0, y = 0),
     annotate_afl_base(dim, origin, colour = colour, fill = fill, size = size, ...),
     annotate_afl_goal_square(dim, origin, colour = colour, fill = NA, size = size, ...),
     annotate_afl_centre_square(dim, origin, colour = colour, fill = NA, size = size, ...),
-    #annotate_afl_arcs(dim, origin, colour = colour, fill = fill, size = size, ...), # can't get this working yet
+    annotate_afl_arcs(dim, origin, colour = colour, fill = fill, size = size, ...), # can't get this working yet
     annotate_afl_centre_circle(dim, origin, colour = colour, fill = NA, size = size, ...)
   ), recursive = FALSE)
 
