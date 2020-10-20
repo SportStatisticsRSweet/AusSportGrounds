@@ -3,11 +3,12 @@
 #' Description to be added
 #'
 #'
-#' @param dim
-#' @param colour
-#' @param fill
-#' @param size
-#' @param ...
+#' @param dim TODO
+#' @param origin TODO
+#' @param colour TODO
+#' @param fill TODO
+#' @param size TODO
+#' @param ... TODO
 #'
 #' @return list of ggplot geoms to be added to a ggplot plot
 #' @export
@@ -44,10 +45,11 @@ annotate_afl_oval <- function(dim, origin = list(x = 0, y = 0),
     annotate_afl_base(dim, origin, colour = colour, fill = fill, size = size, ...),
     annotate_afl_goal_square(dim, origin, colour = colour, fill = NA, size = size, ...),
     annotate_afl_centre_square(dim, origin, colour = colour, fill = NA, size = size, ...),
-    annotate_afl_arcs(dim, origin, colour = colour, fill = fill, size = size, ...), # can't get this working yet
+    annotate_afl_arcs(dim, origin, colour = colour, fill = fill, size = size, ...),
     annotate_afl_centre_circle(dim, origin, colour = colour, fill = NA, size = size, ...)
   ), recursive = FALSE)
 
+  return(marking_layers)
 }
 
 
@@ -55,18 +57,14 @@ annotate_afl_oval <- function(dim, origin = list(x = 0, y = 0),
 #'
 #' Internal function to create AFL base gorund with boundaries
 #'
-#' @param dim
-#' @param colour
-#' @param fill
-#' @param size
-#' @param ...
+#' @inheritParams annotate_afl_oval
 #'
 #' @noRd
 annotate_afl_base <- function(dim, origin = list(x = 0, y = 0),
                               colour = "dimgray", fill = NA, size = 1, ...) {
 
   # outer boundary
-  ggforce::geom_ellipse(aes(
+  ggforce::geom_ellipse(ggplot2::aes(
     x0 = origin$x + (dim$width / 2),
     y0 = origin$y + (dim$length / 2),
     a = dim$width / 2,
@@ -85,11 +83,7 @@ annotate_afl_base <- function(dim, origin = list(x = 0, y = 0),
 #'
 #' Internal function to create AFL Centre Square
 #'
-#' @param dim
-#' @param colour
-#' @param fill
-#' @param size
-#' @param ...
+#' @inheritParams annotate_afl_oval
 #'
 #' @noRd
 annotate_afl_centre_square <- function(dim, origin = list(x = 0, y = 0),
@@ -114,11 +108,7 @@ annotate_afl_centre_square <- function(dim, origin = list(x = 0, y = 0),
 #'
 #' Internal function to create AFL Centre Circle
 #'
-#' @param dim
-#' @param colour
-#' @param fill
-#' @param size
-#' @param ...
+#' @inheritParams annotate_afl_oval
 #'
 #' @noRd
 annotate_afl_centre_circle <- function(dim, origin = list(x = 0, y = 0),
@@ -128,7 +118,7 @@ annotate_afl_centre_circle <- function(dim, origin = list(x = 0, y = 0),
 
   list(
     # inner circle
-    ggforce::geom_circle(aes(x0 = origin$x + (dim$width / 2),
+    ggforce::geom_circle(ggplot2::aes(x0 = origin$x + (dim$width / 2),
                              y0 = origin$y + (dim$length / 2),
                              r = inner_radius),
     colour = colour,
@@ -137,7 +127,7 @@ annotate_afl_centre_circle <- function(dim, origin = list(x = 0, y = 0),
     ...
   ),
   # outer circle
-  ggforce::geom_circle(aes(x0 = origin$x + (dim$width / 2),
+  ggforce::geom_circle(ggplot2::aes(x0 = origin$x + (dim$width / 2),
                            y0 = origin$y + (dim$length / 2),
                            r = outer_radius),
   colour = colour,
@@ -162,11 +152,7 @@ annotate_afl_centre_circle <- function(dim, origin = list(x = 0, y = 0),
 #'
 #' Internal function to create AFL Goal Square
 #'
-#' @param dim
-#' @param colour
-#' @param fill
-#' @param size
-#' @param ...
+#' @inheritParams annotate_afl_oval
 #'
 #' @noRd
 annotate_afl_goal_square <- function(dim, origin = list(x = 0, y = 0),
@@ -203,11 +189,7 @@ annotate_afl_goal_square <- function(dim, origin = list(x = 0, y = 0),
 #'
 #' Internal function to create AFL Arcs
 #'
-#' @param dim
-#' @param colour
-#' @param fill
-#' @param size
-#' @param ...
+#' @inheritParams annotate_afl_oval
 #'
 #' @noRd
 annotate_afl_arcs <- function(dim, origin = list(x = 0, y = 0),
@@ -223,7 +205,7 @@ annotate_afl_arcs <- function(dim, origin = list(x = 0, y = 0),
 
   list(
   # bottom arc
-  ggforce::geom_arc(aes(
+  ggforce::geom_arc(ggplot2::aes(
     x0 = origin$x + (dim$width / 2),
     y0 = origin$y,
     r = arc_r,
@@ -235,7 +217,7 @@ annotate_afl_arcs <- function(dim, origin = list(x = 0, y = 0),
   ...
   ),
   # top arc
-  ggforce::geom_arc(aes(
+  ggforce::geom_arc(ggplot2::aes(
     x0 = origin$x + (dim$width / 2),
     y0 = origin$y + dim$length,
     r = -arc_r,

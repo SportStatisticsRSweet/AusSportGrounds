@@ -46,7 +46,6 @@ test_that("using annotate_afl_oval with ggplot object returns a valid ggplot obj
   expect_equal(length(p$data), 0)
 
   # check a few of the theme elements defaults are as expected
-  g <- annotate_afl_oval(ground_mcg)
   expect_identical(p$layers[[1]]$aes_params$fill, NA)
   expect_identical(p$layers[[1]]$aes_params$size, 1)
   expect_identical(p$layers[[1]]$aes_params$alpha, NULL)

@@ -14,7 +14,17 @@ annotate_afl_oval(
 )
 }
 \arguments{
-\item{...}{}
+\item{dim}{TODO}
+
+\item{origin}{TODO}
+
+\item{colour}{TODO}
+
+\item{fill}{TODO}
+
+\item{size}{TODO}
+
+\item{...}{TODO}
 }
 \value{
 list of ggplot geoms to be added to a ggplot plot
