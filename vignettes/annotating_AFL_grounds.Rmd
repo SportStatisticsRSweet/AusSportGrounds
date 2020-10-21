@@ -17,12 +17,13 @@ knitr::opts_chunk$set(
 The package can create annotations for AFL grounds, with common ground dimensions provided as part of the package. 
 
 ```{r setup}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(AusSportGrounds)
 library(ggplot2)
 ```
 
 ## Basic Usage
-Since the functions are implemeneted as  `ggplot` layers, it is simple to build a ground. You only have to provide some dimensions that define the `length` and `width` of the ground. 
+Since the functions are implemented as  `ggplot` layers, it is simple to build a ground. You only have to provide some dimensions that define the `length` and `width` of the ground. 
 
 ```{r}
 # Create basic AFL field
