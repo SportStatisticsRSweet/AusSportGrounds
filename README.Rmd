@@ -27,40 +27,36 @@ The goal of AusSportGrounds is to ...
 
 You can install the released version of AusSportGrounds from [CRAN](https://CRAN.R-project.org) with:
 
-``` r
+```{r message=FALSE, warning=FALSE}
 #install.packages("AusSportGrounds")
 ```
 
 And the development version from [GitHub](https://github.com/) with:
 
-``` r
+```{r message=FALSE, warning=FALSE}
 # install.packages("devtools")
-#devtools::install_github("SportStatisticsRSweet/AusSportGrounds")
-```
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
-#library(AusSportGrounds)
-## basic example code
+devtools::install_github("SportStatisticsRSweet/AusSportGrounds")
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+## Usage
 
-```{r cars}
-summary(cars)
+The package provides ggplot layers that can be added to any ggplot to overlay various field types. An example is a basic AFL field with known dimensions:
+
+```{r example, message=FALSE, warning=FALSE}
+library(AusSportGrounds)
+library(ggplot2)
+
+# Create basic AFL field
+dim <- list(length = 160,
+            width = 140)
+
+ggplot() +
+     annotate_afl_oval(dim)
+
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+TODO - Add some more simple examples
+TODO - Point towards Vignettes
 
 ## Code of Conduct
 

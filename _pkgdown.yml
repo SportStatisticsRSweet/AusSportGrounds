@@ -1,0 +1,8 @@
+home:
+  title: todo
+  description: todo
+
+template:
+  params:
+    bootswatch: flatly
+    #ganalytics: UA-000000-01
