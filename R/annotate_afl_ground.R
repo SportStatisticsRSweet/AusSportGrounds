@@ -5,6 +5,8 @@
 #'
 #' @param dim TODO
 #' @param origin TODO
+#' @param aspect_ratio TODO
+#' @param limits TODO
 #' @param colour TODO
 #' @param fill TODO
 #' @param size TODO
@@ -36,11 +38,15 @@
 #' theme_ground()
 #'
 #'
-annotate_afl_oval <- function(dim, origin = list(x = 0, y = 0),
-                              colour = "dimgray", fill = NA, size = 1, ...) {
+annotate_afl_oval <- function(dim,
+                              origin = list(x = 0, y = 0),
+                              aspect_ratio = 1,
+                              limits = TRUE,
+                              colour = "dimgray", fill = NA, size = 1,
+                              ...) {
 
-  # need to add some validation
-  #
+
+
   marking_layers <- unlist(list(
     annotate_afl_base(dim, origin, colour = colour, fill = fill, size = size, ...),
     annotate_afl_goal_square(dim, origin, colour = colour, fill = NA, size = size, ...),
@@ -49,7 +55,29 @@ annotate_afl_oval <- function(dim, origin = list(x = 0, y = 0),
     annotate_afl_centre_circle(dim, origin, colour = colour, fill = NA, size = size, ...)
   ), recursive = FALSE)
 
+
+  if (!is.null(aspect_ratio)) {
+    marking_layers <- append(marking_layers, list(ggplot2::coord_fixed(aspect_ratio)))
+  }
+
+  if (limits) {
+    limit_layers <- list(
+      # Leave room for full field + goals and direction_label by default
+      ggplot2::xlim(origin$x - 3,
+                    origin$x + dim$width + 3),
+      ggplot2::ylim(origin$y - 3,
+                    origin$y + dim$length + 3)
+    )
+
+    marking_layers <- append(
+      marking_layers,
+      limit_layers,
+    )
+  }
+
+
   return(marking_layers)
+
 }
 
 
@@ -60,8 +88,10 @@ annotate_afl_oval <- function(dim, origin = list(x = 0, y = 0),
 #' @inheritParams annotate_afl_oval
 #'
 #' @noRd
-annotate_afl_base <- function(dim, origin = list(x = 0, y = 0),
-                              colour = "dimgray", fill = NA, size = 1, ...) {
+annotate_afl_base <- function(dim,
+                              origin = list(x = 0, y = 0),
+                              colour = "dimgray", fill = NA, size = 1,
+                              ...) {
 
   # outer boundary
   ggforce::geom_ellipse(ggplot2::aes(
@@ -86,8 +116,11 @@ annotate_afl_base <- function(dim, origin = list(x = 0, y = 0),
 #' @inheritParams annotate_afl_oval
 #'
 #' @noRd
-annotate_afl_centre_square <- function(dim, origin = list(x = 0, y = 0),
-                                       colour = "dimgray", fill = NA, size = 1, ...) {
+annotate_afl_centre_square <- function(dim,
+                                       origin = list(x = 0, y = 0),
+                                       colour = "dimgray", fill = NA, size = 1,
+                                       ...) {
+
   square_width <- 50
   square_length <- 50
 
@@ -111,8 +144,10 @@ annotate_afl_centre_square <- function(dim, origin = list(x = 0, y = 0),
 #' @inheritParams annotate_afl_oval
 #'
 #' @noRd
-annotate_afl_centre_circle <- function(dim, origin = list(x = 0, y = 0),
-                                       colour = "dimgray", fill = NA, size = 1, ...) {
+annotate_afl_centre_circle <- function(dim,
+                                       origin = list(x = 0, y = 0),
+                                       colour = "dimgray", fill = NA, size = 1,
+                                       ...) {
   outer_radius <- 10 / 2
   inner_radius <- 3 / 2
 

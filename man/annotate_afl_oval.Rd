@@ -7,6 +7,8 @@
 annotate_afl_oval(
   dim,
   origin = list(x = 0, y = 0),
+  aspect_ratio = 1,
+  limits = TRUE,
   colour = "dimgray",
   fill = NA,
   size = 1,
@@ -17,6 +19,10 @@ annotate_afl_oval(
 \item{dim}{TODO}
 
 \item{origin}{TODO}
+
+\item{aspect_ratio}{TODO}
+
+\item{limits}{TODO}
 
 \item{colour}{TODO}
 
