@@ -3,8 +3,6 @@
 #' Functionally very similar to `ggplot2::theme_void` and
 #' adapted directly from `ggsoccer::theme_pitch`.
 #'
-#' @param aspect_ratio Aspect ratio (`y / x`) for the plot.
-#'   Use `NULL` to let the plot take any aspect ratio.
 #'
 #' @return list of ggplot themes to be added to a ggplot plot
 #'
@@ -17,14 +15,13 @@
 #' p <- ggplot(data, aes(x = x, y = y)) +
 #'   geom_point()
 #'
-#' # Ground fixed to square by default
-#' p + theme_ground(1)
+#' # Remove all elements from plot
+#' p + theme_ground()
 #'
-#' # Free aspect
-#' p + theme_ground(aspect_ratio = NULL)
+#'
 #'
 #' @export
-theme_ground <- function(aspect_ratio = 1) {
+theme_ground <- function() {
 
   ggplot2::theme(
     panel.grid.major = ggplot2::element_blank(),
@@ -34,7 +31,6 @@ theme_ground <- function(aspect_ratio = 1) {
     axis.text = ggplot2::element_blank(),
     axis.line = ggplot2::element_blank(),
     panel.background = ggplot2::element_blank(),
-    panel.border = ggplot2::element_blank(),
-    aspect.ratio = aspect_ratio)
+    panel.border = ggplot2::element_blank())
 
 }

@@ -40,7 +40,7 @@
 #'
 annotate_afl_oval <- function(dim,
                               origin = list(x = 0, y = 0),
-                              aspect_ratio = 1,
+                              aspect_ratio = dim$length/dim$width,
                               limits = TRUE,
                               colour = "dimgray", fill = NA, size = 1,
                               ...) {
@@ -159,6 +159,7 @@ annotate_afl_centre_circle <- function(dim,
     colour = colour,
     fill = fill,
     size = size,
+    inherit.aes = FALSE,
     ...
   ),
   # outer circle
@@ -168,6 +169,7 @@ annotate_afl_centre_circle <- function(dim,
   colour = colour,
   fill = fill,
   size = size,
+  inherit.aes = FALSE,
   ...
   ),
   # centreline
@@ -249,6 +251,7 @@ annotate_afl_arcs <- function(dim, origin = list(x = 0, y = 0),
   ),
   colour = colour,
   size = size,
+  inherit.aes = FALSE,
   ...
   ),
   # top arc
@@ -261,6 +264,7 @@ annotate_afl_arcs <- function(dim, origin = list(x = 0, y = 0),
   ),
   colour = colour,
   size = size,
+  inherit.aes = FALSE,
   ...
   ))
 }

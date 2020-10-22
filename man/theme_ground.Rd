@@ -4,11 +4,7 @@
 \alias{theme_ground}
 \title{Removes background and axes details from a ggplot plot.}
 \usage{
-theme_ground(aspect_ratio = 1)
-}
-\arguments{
-\item{aspect_ratio}{Aspect ratio (\code{y / x}) for the plot.
-Use \code{NULL} to let the plot take any aspect ratio.}
+theme_ground()
 }
 \value{
 list of ggplot themes to be added to a ggplot plot
@@ -26,10 +22,9 @@ data <- data.frame(x = c(90, 85, 82, 78, 83),
 p <- ggplot(data, aes(x = x, y = y)) +
   geom_point()
 
-# Ground fixed to square by default
-p + theme_ground(1)
+# Remove all elements from plot
+p + theme_ground()
 
-# Free aspect
-p + theme_ground(aspect_ratio = NULL)
+
 
 }

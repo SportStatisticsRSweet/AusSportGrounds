@@ -10,11 +10,6 @@ test_that("theme_ground returns valid ggplot theme object", {
 
   # check a few of the theme elements are as expected
   expect_identical(t$axis.title, ggplot2::element_blank())
-  expect_equal(t$aspect.ratio, 1)
-
-  # Check aspect ratio works
-  t2 <- theme_ground(aspect_ratio = 80/160)
-  expect_identical(t2$aspect.ratio, 80/160)
 
 })
 
@@ -27,6 +22,5 @@ test_that("using theme_ground with ggplot object updates it's theme", {
 
   # make sure ggplot theme elements are as expected
   expect_identical(p$theme$panel.background, ggplot2::element_blank())
-  expect_identical(p$theme$aspect.ratio, 1)
 
 })

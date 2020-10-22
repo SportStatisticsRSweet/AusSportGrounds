@@ -7,7 +7,7 @@
 annotate_afl_oval(
   dim,
   origin = list(x = 0, y = 0),
-  aspect_ratio = 1,
+  aspect_ratio = dim$length/dim$width,
   limits = TRUE,
   colour = "dimgray",
   fill = NA,
