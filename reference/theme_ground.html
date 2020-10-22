@@ -134,17 +134,8 @@ adapted directly from ggsoccer::theme_pitch." />
 adapted directly from <code>ggsoccer::theme_pitch</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>theme_ground</span><span class='op'>(</span>aspect_ratio <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>theme_ground</span><span class='op'>(</span><span class='op'>)</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>aspect_ratio</th>
-      <td><p>Aspect ratio (<code>y / x</code>) for the plot.
-Use <code>NULL</code> to let the plot take any aspect ratio.</p></td>
-    </tr>
-    </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -159,12 +150,11 @@ Use <code>NULL</code> to let the plot take any aspect ratio.</p></td>
 <span class='va'>p</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>data</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>x</span>, y <span class='op'>=</span> <span class='va'>y</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='co'># Ground fixed to square by default</span>
-<span class='va'>p</span> <span class='op'>+</span> <span class='fu'>theme_ground</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
+<span class='co'># Remove all elements from plot</span>
+<span class='va'>p</span> <span class='op'>+</span> <span class='fu'>theme_ground</span><span class='op'>(</span><span class='op'>)</span>
 </div><div class='img'><img src='theme_ground-1.png' alt='' width='700' height='433' /></div><div class='input'>
-<span class='co'># Free aspect</span>
-<span class='va'>p</span> <span class='op'>+</span> <span class='fu'>theme_ground</span><span class='op'>(</span>aspect_ratio <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
-</div><div class='img'><img src='theme_ground-2.png' alt='' width='700' height='433' /></div><div class='input'>
+
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -135,7 +135,7 @@
     <pre class="usage"><span class='fu'>annotate_afl_oval</span><span class='op'>(</span>
   <span class='va'>dim</span>,
   origin <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fl'>0</span>, y <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span>,
-  aspect_ratio <span class='op'>=</span> <span class='fl'>1</span>,
+  aspect_ratio <span class='op'>=</span> <span class='va'>dim</span><span class='op'>$</span><span class='va'>length</span><span class='op'>/</span><span class='va'>dim</span><span class='op'>$</span><span class='va'>width</span>,
   limits <span class='op'>=</span> <span class='cn'>TRUE</span>,
   colour <span class='op'>=</span> <span class='st'>"dimgray"</span>,
   fill <span class='op'>=</span> <span class='cn'>NA</span>,
